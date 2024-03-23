@@ -1,0 +1,153 @@
+.container {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+  overflow: hidden;
+}
+
+.nav {
+  --state-close: scale(0); /*changes the size of an element*/
+  --state-hamburger: scale(1);
+  --state-menu: translate(-100%); /*moves an element sideways or up and down*/
+
+  padding: 40px 0;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav:target {
+  --state-menu: translate(0);
+  --state-close: scale(1);
+  --state-hamburger: scale(0);
+}
+
+.navLogo {
+  font-size: 2.5rem;
+  color: #fff;
+  z-index: 1;
+}
+
+.navHamburger,
+.navClose {
+  cursor: pointer;
+  grid-column: -2/-1;
+  grid-row: 1/2;
+  transition: 0.4s transform;
+}
+
+.navHamburger {
+  /*transform allows you to visualy manipulate an element*/
+  transform: var(--state-hamburger);
+}
+
+.navClose {
+  transform: var(--state-close);
+}
+.navIcon {
+  width: 40px;
+}
+
+.navItem {
+  list-style: none;
+}
+
+.navItem:has(:checked) {
+  --rows: 1fr;
+  --rotate: rotate(180deg);
+  --bg: #28303b;
+}
+
+.navLinks {
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+  display: grid;
+  align-content: center;
+  gap: 2em;
+  padding-left: 5%;
+
+  transform: var(--state-menu);
+  transition: 0.3s transform;
+}
+
+.navLink {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+
+  position: relative;
+
+  background-color: var(--bg, transparent);
+  border-radius: 6px;
+}
+
+.dropdown-arrow {
+  margin-left: auto;
+  transform: var(--rotate, 0);
+  transition: 0s transform;
+}
+.dropdown-check {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: grid;
+  grid-template-rows: var(--rows, 0fr);
+  transition: 0.3s grid-template-rows;
+}
+
+.dropdown-sub {
+  overflow: hidden;
+}
+
+.dropdown-li {
+  width: 85%;
+  list-style: none;
+  margin-left: auto;
+}
+
+.dropdown-anchor {
+  padding: 1em 0;
+  display: block;
+  color: #b6babe;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    --state-hamburger: scale(0);
+    --state-menu: translate(0);
+  }
+
+  .nav:target {
+    --state-close: scale(0);
+  }
+
+  .navLinks {
+    padding: 0;
+    background-color: unset;
+    position: unset;
+    gap: 1.5em;
+    grid-auto-flow: column;
+    transform: unset;
+
+    grid-column: -2/-1;
+    grid-row: 1/2;
+  }
+
+  .navLink {
+    font-size: 1rem;
+    letter-spacing: none;
+  }
+}

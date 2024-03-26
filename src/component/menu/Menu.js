@@ -2,6 +2,8 @@ import "./Menu.css";
 import { SlArrowDown } from "react-icons/sl";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { AiOutlineMenu } from "react-icons/ai";
+import { FaShoppingCart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Menu() {
   return (
@@ -15,28 +17,28 @@ export default function Menu() {
         </li>
         <li className="navItem">
           <a href="#" className="navLink">
-            Categoria 1
+            Ropa
             <SlArrowDown className="dropdown-arrow" />
             <input type="checkbox" className="dropdown-check" />
           </a>
           <div className="dropdown-content">
             <ul className="dropdown-sub">
               <li className="dropdown-li">
-                <a className="dropdown-anchor">sub categoria 1</a>
+                <Link className="dropdown-anchor">Ropa Depostiva</Link>
               </li>
               <li className="dropdown-li">
-                <a className="dropdown-anchor">sub categoria 2</a>
+                <Link className="dropdown-anchor">Ropa casual</Link>
               </li>
               <li className="dropdown-li">
-                <a className="dropdown-anchor">sub categoria 3</a>
+                <Link className="dropdown-anchor">Accesorios</Link>
               </li>
             </ul>
           </div>
         </li>
         <li className="navItem">
-          <a href="#" className="navLink">
-            Acerca de
-          </a>
+          <Link to="/shopping-cart" className="navLink">
+            <FaShoppingCart />
+          </Link>
         </li>
         <li className="navItem">
           <a href="#" className="navLink">

@@ -38,6 +38,7 @@ export default function Menu() {
         <li className="navItem">
           <Link to="/shopping-cart" className="navLink">
             <FaShoppingCart />
+            Carrito
           </Link>
         </li>
         <li className="navItem">

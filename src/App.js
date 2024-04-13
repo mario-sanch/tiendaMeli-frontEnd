@@ -1,15 +1,15 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Menu from "./component/menu/Menu";
-import { Route, Routes } from "react-router-dom";
-import Landing from "./pages/landingPage/Landing";
-import ShoppingCart from "./pages/shopping-cart/shopping-cart";
-import ErrorPage from "./pages/error-page/error-page";
+//import { Route, Routes } from "react-router-dom";
+//import Landing from "./pages/landingPage/Landing";
+//import ShoppingCart from "./pages/shopping-cart/shopping-cart";
+//import ErrorPage from "./pages/error-page/error-page";
 
 function App() {
   return (
     <div className="appContainer">
-      <Menu />
+      {/* <Menu />
       <Routes>
         <Route
           path="/"
@@ -17,7 +17,8 @@ function App() {
           errorElement={<ErrorPage />}
         ></Route>
         <Route path="/shopping-cart" element={<ShoppingCart />}></Route>
-      </Routes>
+      </Routes> */}
+      <Menu />
     </div>
   );
 }

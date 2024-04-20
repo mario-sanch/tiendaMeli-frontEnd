@@ -3,7 +3,7 @@ import { SlArrowDown } from "react-icons/sl";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { AiOutlineMenu } from "react-icons/ai";
 import { FaShoppingCart } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Menu() {
   return (
@@ -11,9 +11,14 @@ export default function Menu() {
       <h2 className="navLogo">Logo here</h2>
       <ul className="navLinks">
         <li className="navItem">
-          <a href="#" className="navLink">
+          <NavLink
+            to={`products`}
+            className={({ isActive, isPending }) =>
+              isActive ? "active" : isPending ? "pending" : ""
+            }
+          >
             Inicio
-          </a>
+          </NavLink>
         </li>
         <li className="navItem">
           <a href="#" className="navLink">
@@ -36,10 +41,15 @@ export default function Menu() {
           </div>
         </li>
         <li className="navItem">
-          <Link to="/shopping-cart" className="navLink">
+          <NavLink
+            to={`/shopping-cart`}
+            className={({ isActive, isPending }) =>
+              isActive ? "active" : isPending ? "pending" : ""
+            }
+          >
             <FaShoppingCart />
             Carrito
-          </Link>
+          </NavLink>
         </li>
         <li className="navItem">
           <a href="#" className="navLink">

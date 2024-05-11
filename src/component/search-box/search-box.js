@@ -1,40 +1,37 @@
+import "./search-box.css";
 import { useEffect } from "react";
 import { Form } from "react-router-dom";
 import { useSubmit, Navigate } from "react-router-dom";
+import { BsSearch } from "react-icons/bs";
 
 const SearchBox = () => {
   /*useEffect(() => {
         document.getElementById("q").value = q;
     }, [q]);*/
-
   /*const searching =
     navigation.location &&
     new URLSearchParams(navigation.location.searching).has("q");*/
-
-  const submit = useSubmit();
+  /* const submit = useSubmit();*/
 
   return (
-    <div>
-      <Form id="search-form" role="search">
+    <Form id="search-form" role="search">
+      <div className="search-container">
         <input
           id="q"
-          //className={searching ? "loading" : ""}
-          aria-label="Search"
-          placeholder="Buscar"
+          aria-label="search"
           type="search"
-          name="q"
+          name="search"
+          placeholder="Search..."
+          className="search-input"
           onChange={(event) => {
-            //const isFirstSearch = q == null;
-            /*submit(event.currentTarget.form, {
-              replace: !isFirstSearch,
-            });*/
-            submit(event.currentTarget.form);
+            console.log("test");
           }}
         />
-        <div id="search-spinner" aria-hidden /*hidden={!searching}*/></div>
-        <div className="sr-only" aria-live="polite"></div>
-      </Form>
-    </div>
+        <a href="#" className="search-btn">
+          <BsSearch />
+        </a>
+      </div>
+    </Form>
   );
 };
 

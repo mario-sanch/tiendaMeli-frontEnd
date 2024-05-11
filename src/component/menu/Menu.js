@@ -8,7 +8,6 @@ import { Link, NavLink } from "react-router-dom";
 export default function Menu() {
   return (
     <nav className="nav container" id="nav">
-      <h2 className="navLogo">Logo here</h2>
       <ul className="navLinks">
         <li className="navItem">
           <NavLink

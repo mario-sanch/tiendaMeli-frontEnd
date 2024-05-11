@@ -2,6 +2,7 @@ import "./product-list.css";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Product from "../../../component/product/product";
 import SearchBox from "../../../component/search-box/search-box";
+import { IoIosAddCircleOutline } from "react-icons/io";
 
 export function loader({ request }) {
   // fetch products from api
@@ -11,16 +12,25 @@ export function loader({ request }) {
 
   const products = [
     {
+      id: 1,
       name: "zapato",
       price: "12500",
       description: "product description 1",
-      imgUrl: "",
+      imgUrl: "../../../../images/zapato_w_150.jpg",
     },
     {
+      id: 2,
       name: "perfume",
       price: "17850",
       description: "product description 2",
-      imgUrl: "",
+      imgUrl: "../../../../images/perfume.jpg",
+    },
+    {
+      id: 3,
+      name: "Aretes",
+      price: "17850",
+      description: "product description 2",
+      imgUrl: "../../../../images/aretes.jpg",
     },
   ];
 
@@ -35,23 +45,24 @@ const Products = () => {
   const navigate = useNavigate();
 
   return (
-    <div>
-      <h2>Productos</h2>
-      <div>
-        <SearchBox />
-        <button
+    <div className="productsPage-container">
+      <h2 className="">Productos</h2>
+      <div className="addButton-container">
+        <IoIosAddCircleOutline
+          size={25}
           onClick={() => {
             navigate(`/create-product`);
           }}
-        >
-          Crear nuevo Producto
-        </button>
+        />
+      </div>
+      <div className="">
+        <SearchBox />
       </div>
       <div>
         {products && products.length ? (
-          <div>
+          <div className="productLst-container">
             {products.map((product, index) => {
-              return <Product />;
+              return <Product key={product.id} product={product} />;
             })}
           </div>
         ) : (

@@ -3,7 +3,7 @@ import "./product.css";
 const Product = ({ product }) => {
   return (
     <div className="product">
-      <div>
+      <div className="image-container">
         <img
           sizes="(max-width: 335px) 100vw, 335px"
           srcSet="../../../../images/zapato1_suyske_c_scale,w_150.jpg 150w, 

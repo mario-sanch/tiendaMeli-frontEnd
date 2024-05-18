@@ -1,33 +1,23 @@
-//import logox from "./images/logox.jpeg";
 import "./App.css";
 import { Outlet, useNavigation } from "react-router-dom";
-import Menu from "./component/menu/Menu";
+
+import Header from "./component/header/header";
 import Footer from "./component/footer/footer";
 
-function App() {
-  const navigation = useNavigation();
-
+const App = () => {
   return (
     <div className="appContainer">
-      <div
-        className="header-container"
-        style={{ borderBottom: "1px solid black" }}
-      >
-        <img src="./images/logox.jpeg" alt="logo" />
-        <Menu />
-      </div>
-      <div
-        id="mainContent"
-        className={navigation.state == "loading" ? "loading" : ""}
-        style={{ border: "1px solid purple" }}
-      >
+      <header className="main-header">
+        <Header />
+      </header>
+      <main className="main-content">
+        main content
         <Outlet />
-      </div>
-      <div>
+      </main>
+      <footer className="footer">
         <Footer />
-      </div>
+      </footer>
     </div>
   );
-}
-
+};
 export default App;

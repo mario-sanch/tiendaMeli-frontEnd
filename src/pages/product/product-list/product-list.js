@@ -5,9 +5,9 @@ import SearchBox from "../../../component/search-box/search-box";
 import { IoIosAddCircleOutline } from "react-icons/io";
 
 export function loader({ request }) {
-  // fetch products from api
-  const url = new URL(request.url);
-  const q = url.searchParams.get("q");
+  //fetch products from api
+  //const url = new URL(request.url);
+  //const q = url.searchParams.get("q");
   //const products = await getProducts(q);
 
   const products = [
@@ -58,17 +58,9 @@ const Products = () => {
       <div className="">
         <SearchBox />
       </div>
-      <div>
-        {products && products.length ? (
-          <div className="productLst-container">
-            {products.map((product, index) => {
-              return <Product key={product.id} product={product} />;
-            })}
-          </div>
-        ) : (
-          <div>No, no hay products q mostrar</div>
-        )}
-      </div>
+      {products.map((product, index) => {
+        return <Product key={product.id} product={product} />;
+      })}
     </div>
   );
 };

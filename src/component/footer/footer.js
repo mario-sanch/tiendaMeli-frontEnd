@@ -13,7 +13,7 @@ const Footer = () => {
       <div className="contact-container">
         <FaFacebook />
         <span>
-          <MdEmail /> Melissa@gmail.com
+          <MdEmail /> Correo@gmail.com
         </span>
       </div>
       <div className="copyright">

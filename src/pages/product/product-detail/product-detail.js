@@ -4,18 +4,21 @@ export function loader({ params }) {
   const id = params.id;
 
   const product = {
+    id: id,
     name: "cacauate",
   };
 
-  return id;
+  return { product };
 }
 
 const ProductDetail = () => {
-  const id = useLoaderData();
+  const { product } = useLoaderData();
+
   return (
     <div>
       <h1>Product Detail</h1>
-      <p>product detail: {id}</p>
+      <p>Product: {product.name}</p>
+      <p>product id: {product.id}</p>
     </div>
   );
 };

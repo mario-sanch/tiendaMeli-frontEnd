@@ -1,20 +1,18 @@
-.container {
-  /*margin: 0 auto;*/
-  /*width: 90%;*/
+/* .container {
   max-width: 1200px;
   overflow: hidden;
 }
 
 .nav {
-  --state-close: scale(0); /*changes the size of an element*/
+  --state-close: scale(0);
   --state-hamburger: scale(1);
-  --state-menu: translate(-100%); /*moves an element sideways or up and down*/
+  --state-menu: translate(-100%);
 
   padding: 40px 0;
   display: grid;
   grid-template-columns: repeat(2, max-content);
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
 }
 
 .nav:target {
@@ -32,7 +30,6 @@
 }
 
 .navHamburger {
-  /*transform allows you to visualy manipulate an element*/
   transform: var(--state-hamburger);
 }
 
@@ -144,4 +141,56 @@
     font-size: 1rem;
     letter-spacing: none;
   }
+} */
+
+/****************************************************************************/
+#navbar {
+  background-color: #8b9dc3;
+}
+
+.navbar-options {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  list-style: none;
+  padding: 1rem;
+}
+
+.navbar-options li,
+a {
+  text-align: center;
+  color: white;
+  list-style: none;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+}
+
+.navbar-options li ul {
+  display: none;
+}
+
+.navbar-options li ul a {
+  font-weight: normal;
+}
+
+.navbar-options li:hover ul {
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  margin-top: 1rem;
+  background-color: #8b9dc3;
+}
+
+.navbar-options li:hover ul li {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  align-items: center;
+}
+
+.navbar-options li ul li:hover {
+  background: #526690;
 }

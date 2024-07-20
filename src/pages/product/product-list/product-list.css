@@ -15,22 +15,17 @@ h2 {
   margin-bottom: 25px;
 }
 
-.productLst-container {
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  row-gap: 25px;
-  margin-top: 25px;
-  height: 400px;
-  /*overflow: auto;*/
-  background-color: white;
+.search-box-container {
 }
 
-@media only screen and (min-width: 768px) {
-  .productLst-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 25px;
-    padding: 15px;
-  }
+.productList {
+  margin-top: 35px;
+  margin-bottom: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  justify-content: center;
+  grid-auto-rows: auto;
+  row-gap: 25px;
+  column-gap: 25px;
+  padding: 50px;
 }

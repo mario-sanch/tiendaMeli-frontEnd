@@ -1,104 +1,107 @@
-// import { IoIosCloseCircleOutline } from "react-icons/io";
-// import { AiOutlineMenu } from "react-icons/ai";
-// import { FaShoppingCart } from "react-icons/fa";
-// import { Link, NavLink } from "react-router-dom";
-
-// export default function Menu() {
-//   return (
-//     <nav className="nav container" id="nav">
-//       <ul className="navLinks">
-//         <li className="navItem">
-//           <NavLink
-//             to={`products`}
-//             className={({ isActive, isPending }) =>
-//               isActive ? "active" : isPending ? "pending" : ""
-//             }
-//           >
-//             Inicio
-//           </NavLink>
-//         </li>
-//         <li className="navItem">
-//           <a href="#" className="navLink">
-//             Ropa
-//             <SlArrowDown className="dropdown-arrow" />
-//             <input type="checkbox" className="dropdown-check" />
-//           </a>
-//           <div className="dropdown-content">
-//             <ul className="dropdown-sub">
-//               <li className="dropdown-li">
-//                 <Link className="dropdown-anchor">Ropa Depostiva</Link>
-//               </li>
-//               <li className="dropdown-li">
-//                 <Link className="dropdown-anchor">Ropa casual</Link>
-//               </li>
-//               <li className="dropdown-li">
-//                 <Link className="dropdown-anchor">Accesorios</Link>
-//               </li>
-//             </ul>
-//           </div>
-//         </li>
-//         <li className="navItem">
-//           <NavLink
-//             to={`/shopping-cart`}
-//             className={({ isActive, isPending }) =>
-//               isActive ? "active" : isPending ? "pending" : ""
-//             }
-//           >
-//             <FaShoppingCart />
-//             Carrito
-//           </NavLink>
-//         </li>
-//         <li className="navItem">
-//           <a href="#" className="navLink">
-//             Contacto
-//           </a>
-//         </li>
-//       </ul>
-//       <a href="#nav" className="navHamburger">
-//         <AiOutlineMenu size={70} className="navIcon" />
-//       </a>
-//       <a href="#" className="navClose">
-//         <IoIosCloseCircleOutline size={50} className="navIcon" />
-//       </a>
-//     </nav>
-//   );
-// }
-/*****************************************************************************/
-
-import "./Menu.css";
-import { SlArrowDown } from "react-icons/sl";
+/* import "./Menu.css";
+import { AiOutlineMenu } from "react-icons/ai";
+import { ImCross } from "react-icons/im";
 
 const Menu = () => {
   return (
-    <nav id="navbar">
-      <ul className="navbar-options">
-        <li>
-          <a href="#">Home</a>
-        </li>
-        <li>
-          <span>
-            Products <SlArrowDown className="dropdown-arrow" />
-          </span>
-          <ul>
-            <li>
-              <a href="#">Ropa</a>
-            </li>
-            <li>
-              <a href="#">Perfumes</a>
-            </li>
-            <li>
-              <a href="#">Accesorios</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">About Us</a>
-        </li>
-        <li>
-          <a href="#">Shopping Cart</a>
-        </li>
-      </ul>
-    </nav>
+    <div className="hero">
+      <nav className="nav container" id="nav">
+        <h2 className="nav_logo">Tu logo</h2>
+        <ul className="nav_links">
+          <li className="nav_item">
+            <a href="#" className="nav_link">
+              Inicio
+            </a>
+          </li>
+          <li className="nav_item">
+            <a href="#" className="nav_link">
+              Blog
+            </a>
+          </li>
+          <li className="nav_item">
+            <a href="#" className="nav_link">
+              Acerca de
+            </a>
+          </li>
+          <li className="nav_item">
+            <a href="#" className="nav_link">
+              Contacto
+            </a>
+          </li>
+        </ul>
+        <a href="#nav" className="nav_hamburger">
+          <AiOutlineMenu size={70} className="nav_icon" />
+        </a>
+        <a href="#" className="nav_close">
+          <ImCross className="nav_icon" />
+        </a>
+      </nav>
+    </div>
+  );
+};
+
+export default Menu;
+ */
+/*************************************************/
+
+import "./Menu.css";
+import { AiOutlineMenu } from "react-icons/ai";
+import { ImCross } from "react-icons/im";
+
+const Menu = () => {
+  return (
+    <div>
+      <nav className="navbar" id="nav">
+        <div className="logo">Logo</div>
+        <ul className="nav-links">
+          <li className="nav-item">
+            <a href="#" aria-label="ir a la pagina de inicio">
+              Inicio
+            </a>
+          </li>
+          <li className="nav-item">
+            <a
+              href="#"
+              className="nav-link"
+              aria-label="conoce mas sobre nocotros"
+            >
+              Acerca
+            </a>
+          </li>
+          <li className="nav-item">
+            <a
+              href="#"
+              className="nav-link"
+              aria-label="explorar nuestros servicios"
+            >
+              Productos
+              <ul className="submenu">
+                <li>
+                  <a href="#">Perfumes</a>
+                </li>
+                <li>
+                  <a href="#">Ropa</a>
+                </li>
+                <li>
+                  <a href="#">Accesorios</a>
+                </li>
+              </ul>
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="#" className="nav-link" aria-label="">
+              Contactos
+            </a>
+          </li>
+        </ul>
+        <a href="#nav" className="nav_hamburger">
+          <AiOutlineMenu size={35} className="nav_icon" />
+        </a>
+        <a href="#" className="nav_close">
+          <ImCross size={30} className="nav_icon" />
+        </a>
+      </nav>
+    </div>
   );
 };
 

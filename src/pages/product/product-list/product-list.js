@@ -41,7 +41,6 @@ export function loader({ request }) {
 const Products = () => {
   //const { products, q } = useLoaderData(); // use q as default value for the search component
   const { products } = useLoaderData();
-
   const navigate = useNavigate();
 
   return (
@@ -55,12 +54,14 @@ const Products = () => {
           }}
         />
       </div>
-      <div className="">
+      <div className="search-box-container">
         <SearchBox />
       </div>
-      {products.map((product, index) => {
-        return <Product key={product.id} product={product} />;
-      })}
+      <div className="productList">
+        {products.map((product, index) => {
+          return <Product key={product.id} product={product} />;
+        })}
+      </div>
     </div>
   );
 };

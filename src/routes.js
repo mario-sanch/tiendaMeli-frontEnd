@@ -1,5 +1,5 @@
 import React from "react";
-import { createBrowserRouter, Route, Link } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import Landing from "./pages/landingPage/Landing";
 import ErrorPage from "./pages/error-page/error-page";
